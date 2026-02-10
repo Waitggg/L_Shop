@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <script src='script.ts'></script>
+</head>
+<body>
+    <div class="auth-switch" data-active="left">
+    <button class="auth-switch-btn" data-side="left">Авторизация</button>
+    <button class="auth-switch-btn" data-side="right">Регистрация</button>
+    </div>            
+    <div class="auth-content">
+    <div id="loginForm" class="auth-form active">
+        <h3>Авторизация</h3>
+        <input type="text" id="loginUsername" class="auth-input" placeholder="Логин">
+        <input type="password" id="loginPassword" class="auth-input" placeholder="Пароль">
+        <button id="loginSubmit" class="auth-submit">Войти</button>
+        <div id="loginError" class="auth-error"></div>
+    </div>
+
+    <div id="signupForm" class="auth-form">
+        <h3>Регистрация</h3>
+        <input type="text" id="signupUsername" class="auth-input" placeholder="Логин">
+        <input type="password" id="signupPassword" class="auth-input" placeholder="Пароль">
+        <button id="signupSubmit" class="auth-submit">Зарегистрироваться</button>
+        <div id="signupError" class="auth-error"></div>
+    </div>
+    </div>
+
+    <button id="authSkip" class="auth-skip">Пропустить</button>
+</body>
+</html>
