@@ -1,0 +1,50 @@
+{
+  "users": [
+    {},
+    {
+      "id": "1771416454059",
+      "email": "jabijabi@gmail.com",
+      "password": "secretJabi52",
+      "creationDate": "2026-02-18T12:07:34.059Z",
+      "role": "user"
+    },
+    {
+      "id": "1771416583825",
+      "email": "jabijabi2@gmail.com",
+      "password": "secretJabi52",
+      "creationDate": "2026-02-18T12:09:43.825Z",
+      "role": "user"
+    },
+    {
+      "id": "1771416632665",
+      "email": "jabijabi3@gmail.com",
+      "password": "secretJabi52",
+      "creationDate": "2026-02-18T12:10:32.665Z",
+      "role": "user"
+    },
+    {
+      "id": "1771418043229",
+      "email": "jabijabi52@gmail.com",
+      "password": "secretJabi52",
+      "creationDate": "2026-02-18T12:34:03.229Z",
+      "role": "user",
+      "token": "QA44SYsnD5uXvG_fi3StsywU4iHlBu0PezKCNQn--Cg"
+    },
+    {
+      "id": "123",
+      "email": "1771660746347",
+      "password": "kirillkorolt2589@gmail.com",
+      "creationDate": "2026-02-21T07:59:06.347Z",
+      "role": "user",
+      "token": "D3aMRLED0s3d9hEWKn3XD7mQWK2TMIN0GDOJ2EDi4Ss"
+    },
+    {
+      "id": "5252",
+      "email": "1771661256513",
+      "password": "4vak@gmail.com",
+      "creationDate": "2026-02-21T08:07:36.513Z",
+      "role": "user",
+      "token": "0VjY5WB7OU--bfIAzDdpmLzYsYH56ryEcdeqVv0JuPk"
+    }
+  ]
+}
