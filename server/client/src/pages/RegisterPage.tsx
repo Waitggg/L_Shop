@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import type { RegisterPageProps, ErrorWithMessage } from '../types/authTypes';
-// import { authService } from '../../services/authService';
-// import { createUser, authUser } from '../../../server/src/controllers/auth_controller';
-// import { User } from '../../../server/src/types/users';
 
 function RegisterPage({ setIsAuth }:RegisterPageProps) {
   const [email, setEmail] = useState('');

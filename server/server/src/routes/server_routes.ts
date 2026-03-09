@@ -47,4 +47,4 @@ export const profile = async (req: Request, res: Response) => {
       message: 'Ошибка сервера' 
     });
   }
-};
+}
