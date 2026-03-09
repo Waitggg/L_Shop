@@ -1,4 +1,5 @@
 import { generateToken } from '../services/token_generator';
+import { getId } from '../services/auth_validator';
 
 type Role = 'admin' | 'user' | 'guest';
 
@@ -13,12 +14,12 @@ interface IUser{
 
 export class User implements IUser{
     constructor(
+    private _id: string,
     private _email: string,
     private _password: string,
-    private _id?: string,
-    private _creationDate?: Date,
-    private _role?: Role,
-    private _token?: string
+    private _creationDate: Date,
+    private _role: Role,
+    private _token: string
     ) {}
 
     static async createNew(email: string, password: string, role: Role = 'user'): Promise<User> {
@@ -39,11 +40,11 @@ export class User implements IUser{
         //       await generateToken(req.body)
         //     );
         return new User(
-              Date.now().toString(),
+              getId(),
               email,
               password, // хэшировать потом надооооо!!!!
               new Date(),
-              "user",
+              role,
               await generateToken({email, password})
             );
     }

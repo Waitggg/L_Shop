@@ -6,7 +6,7 @@ interface UserData {
   id: string;
   email: string;
   role: string;
-  createdAt: string;
+  creationDate: string;
 }
 
 function ProfilePage({ setIsAuth }: RegisterPageProps) {
@@ -85,38 +85,40 @@ function ProfilePage({ setIsAuth }: RegisterPageProps) {
 
   return (
     <div className="profile-container">
-      <div className="profile-header">
-        <h2>Профиль пользователя</h2>
+      <div className="profile-container">
+        <div className="error">{error}</div>
         <button onClick={handleLogout} className="logout-button">
-          Выйти из аккаунта
+          Вернуться на главную
         </button>
       </div>
+
+      <h2>Профиль пользователя</h2>
 
       {userData && (
         <div className="profile-info">
           <div className="info-item">
-            <span className="info-label">Email:</span>
+            <span className="info-label">Email: </span>
             <span className="info-value">{userData.email}</span>
           </div>
           
           <div className="info-item">
-            <span className="info-label">Роль:</span>
+            <span className="info-label">Роль: </span>
             <span className="info-value">{userData.role || 'Пользователь'}</span>
           </div>
           
           <div className="info-item">
-            <span className="info-label">ID:</span>
-            <span className="info-value">{userData.id}</span>
-          </div>
-          
-          <div className="info-item">
-            <span className="info-label">Дата регистрации:</span>
+            <span className="info-label">Дата регистрации: </span>
             <span className="info-value">
-              {new Date(userData.createdAt).toLocaleDateString('ru-RU')}
+              {new Date(userData.creationDate).toLocaleDateString('ru-RU')}
             </span>
           </div>
         </div>
       )}
+            <div className="profile-header">
+        <button onClick={handleLogout} className="logout-button">
+          Выйти из аккаунта
+        </button>
+      </div>
     </div>
   );
 }

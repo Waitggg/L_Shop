@@ -12,10 +12,16 @@ export function validateAuth(body : any)
       return { success: true, error: null };
 }
 
+export function getId()
+{
+  const filePath = path.resolve(__dirname, '../db/users.json');
+  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  return data.users.length;
+}
+
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const token = req.headers.authorization;
-    console.log(token);
     if (!token) {
       return res.status(401).json({ 
         success: false, 
@@ -23,10 +29,9 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
       });
     }
     
-    const filePath = path.join(__dirname, './db/users.json');
+    const filePath = path.resolve(__dirname, '../db/users.json');
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     const user = data.users.find((u: any) => u.token === token);
-    
     if (!user) {
       return res.status(401).json({ 
         success: false, 

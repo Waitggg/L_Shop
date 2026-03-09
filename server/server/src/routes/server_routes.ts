@@ -34,12 +34,10 @@ export async function register (req: Request, res: Response) {
 export const profile = async (req: Request, res: Response) => {
   try {
     const user = (req as any).user;
-    
-    const { password, ...userWithoutPassword } = user;
-    
+        
     res.status(200).json({
       success: true,
-      user: userWithoutPassword
+      user: user
     });
     
   } catch (error) {

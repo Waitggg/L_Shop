@@ -27,7 +27,7 @@ function LoginPage({ setIsAuth }: RegisterPageProps) {
       localStorage.setItem('token', data.token);
 
       setIsAuth(true);
-      navigate('/profile');
+      navigate('/api/profile');
       
     } catch (err) {
       const error = err as ErrorWithMessage;

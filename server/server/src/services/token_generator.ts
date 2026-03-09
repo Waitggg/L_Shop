@@ -6,7 +6,7 @@ export async function generateToken(body:any)
   const secret = '52';
   const enc = new TextEncoder();
   const keyData = enc.encode(secret);
-  const msgData = enc.encode(body.email);
+  const msgData = enc.encode(body.email+body.password);
 
   const cryptoKey = await crypto.subtle.importKey(
     'raw',

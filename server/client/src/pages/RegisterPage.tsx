@@ -47,7 +47,7 @@ function RegisterPage({ setIsAuth }:RegisterPageProps) {
       localStorage.setItem('token', loginData.token);
       
       setIsAuth(true);
-      navigate('/profile');
+      navigate('/api/profile');
       // const newUser = await User.createNew(email, password);
       // await createUser(newUser);
       // // После регистрации сразу логиним
