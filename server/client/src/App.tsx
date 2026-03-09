@@ -3,29 +3,33 @@ import { useState } from 'react';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
+import HomePage from './pages/HomePage'; // ДОБАВЛЕНО: импорт главной страницы
 
 function App() {
   const [isAuth, setIsAuth] = useState(() => !!localStorage.getItem('token'));
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={
-          isAuth ? <Navigate to="/profile" /> : <LoginPage setIsAuth={setIsAuth} />
-        } />
-        <Route path="/register" element={
-          isAuth ? <Navigate to="/profile" /> : <RegisterPage setIsAuth={setIsAuth} />
-        } />
-        <Route 
-        path="/profile" 
-        element={
-          isAuth ? 
-          <ProfilePage setIsAuth={setIsAuth} /> :  // Показываем профиль
-          <Navigate to="/login" replace />          // Или редирект на логин
-        } 
-      />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          {/* ДОБАВЛЕНО: Главная страница XenonZap теперь доступна по адресу / */}
+          <Route path="/" element={<HomePage />} />
+
+          <Route path="/login" element={
+            isAuth ? <Navigate to="/profile" /> : <LoginPage setIsAuth={setIsAuth} />
+          } />
+          <Route path="/register" element={
+            isAuth ? <Navigate to="/profile" /> : <RegisterPage setIsAuth={setIsAuth} />
+          } />
+          <Route
+              path="/profile"
+              element={
+                isAuth ?
+                    <ProfilePage setIsAuth={setIsAuth} /> :  // Показываем профиль
+                    <Navigate to="/login" replace />          // Или редирект на логин
+              }
+          />
+        </Routes>
+      </BrowserRouter>
   );
 }
 
