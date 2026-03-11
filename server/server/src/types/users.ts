@@ -1,7 +1,32 @@
 import { generateToken } from '../services/token_generator';
-import { getId } from '../services/auth_validator';
+import { getId } from '../services/user_getter';
 
 type Role = 'admin' | 'user' | 'guest';
+
+export interface AuthRequestBody {
+  email: string;
+  password: string;
+}
+
+export interface AuthResponseBody {
+  status: number;
+  success: boolean;
+  token: string;
+  message: string;
+}
+
+export interface ValidationResult {
+  success: boolean;
+  error: string | null;
+}
+
+declare global {
+  namespace Express {
+    interface Request {
+      user?: User;
+    }
+  }
+}
 
 interface IUser{
     id?: string,

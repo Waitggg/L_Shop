@@ -20,8 +20,8 @@ function App() {
         path="/profile" 
         element={
           isAuth ? 
-          <ProfilePage setIsAuth={setIsAuth} /> :  // Показываем профиль
-          <Navigate to="/login" replace />          // Или редирект на логин
+          <ProfilePage setIsAuth={setIsAuth} /> :
+          <Navigate to="/login" replace />
         } 
       />
       </Routes>

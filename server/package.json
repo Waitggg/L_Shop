@@ -8,6 +8,7 @@
     "build": "cd client && npm run build && cd ../server && npm run build"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
     "concurrently": "^8.2.2"
   },
   "dependencies": {
