@@ -1,0 +1,116 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "title": "The Witcher 3: Wild Hunt",
+      "price": 29.99,
+      "genre": "RPG",
+      "rating": 4.9,
+      "image": "/1.png"
+    },
+    {
+      "id": 2,
+      "title": "Cyberpunk 2077",
+      "price": 59.99,
+      "genre": "RPG",
+      "rating": 4.3,
+      "image": "/2.png"
+    },
+    {
+      "id": 3,
+      "title": "Red Dead Redemption 2",
+      "price": 59.99,
+      "genre": "Action",
+      "rating": 4.8,
+      "image": "/3.png"
+    },
+    {
+      "id": 4,
+      "title": "Grand Theft Auto V",
+      "price": 29.99,
+      "genre": "Action",
+      "rating": 4.7,
+      "image": "/4.png"
+    },
+    {
+      "id": 5,
+      "title": "DOOM Eternal",
+      "price": 39.99,
+      "genre": "Shooter",
+      "rating": 4.8,
+      "image": "/5.png"
+    },
+    {
+      "id": 6,
+      "title": "Counter-Strike 2",
+      "price": 9.99,
+      "genre": "Shooter",
+      "rating": 4.5,
+      "image": "/6.png"
+    },
+    {
+      "id": 7,
+      "title": "Dota 2",
+      "price": 9.99,
+      "genre": "MOBA",
+      "rating": 4.2,
+      "image": "/7.png"
+    },
+    {
+      "id": 8,
+      "title": "Hollow Knight",
+      "price": 14.99,
+      "genre": "Platformer",
+      "rating": 4.9,
+      "image": "/8.png"
+    },
+    {
+      "id": 9,
+      "title": "Stardew Valley",
+      "price": 14.99,
+      "genre": "Simulation",
+      "rating": 4.9,
+      "image": "/9.png"
+    },
+    {
+      "id": 10,
+      "title": "Terraria",
+      "price": 9.99,
+      "genre": "Sandbox",
+      "rating": 4.8,
+      "image": "/10.png"
+    },
+    {
+      "id": 11,
+      "title": "Portal 2",
+      "price": 9.99,
+      "genre": "Puzzle",
+      "rating": 4.9,
+      "image": "/11.png"
+    },
+    {
+      "id": 12,
+      "title": "Age of Empires II: DE",
+      "price": 19.99,
+      "genre": "Strategy",
+      "rating": 4.8,
+      "image": "/12.png"
+    },
+    {
+      "id": 13,
+      "title": "Hades",
+      "price": 24.99,
+      "genre": "Roguelike",
+      "rating": 4.9,
+      "image": "/13.png"
+    },
+    {
+      "id": 14,
+      "title": "Phasmophobia",
+      "price": 13.99,
+      "genre": "Horror",
+      "rating": 4.7,
+      "image": "/14.png"
+    }
+  ]
+}
