@@ -85,7 +85,6 @@ const HomePage: React.FC = () => {
             price: game.price,
             image: game.image
         });
-        alert(`"${game.title}" добавлена в корзину!`);
     };
 
     return (

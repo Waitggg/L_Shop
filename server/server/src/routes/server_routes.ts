@@ -2,6 +2,8 @@ import { Request, Response } from 'express';
 import { validateAuth } from '../services/auth_validator';
 import { authUser, createUser } from '../controllers/auth_controller';
 import { User } from '../types/users';
+import fs from 'fs';
+import path from 'path';
 
 const setAuthCookie = (res: Response, token: string) : void => {
   res.cookie('auth_token', token, {
@@ -108,5 +110,24 @@ export const logout = async (req: Request, res: Response): Promise<void> => {
   } catch (error) {
     console.error('Logout error:', error);
     res.status(500).json({ success: false, message: 'Ошибка при выходе' });
+  }
+};
+
+export const getGames = async (req: Request, res: Response) => {
+  try {
+    const gamesPath = path.join(__dirname, '..', 'db', 'games.json');
+
+    if (fs.existsSync(gamesPath)) {
+      const data = fs.readFileSync(gamesPath, 'utf8');
+      res.json(JSON.parse(data));
+    } else {
+      res.status(404).json({
+        success: false,
+        message: "Файл games.json не найден в директории db"
+      });
+    }
+  } catch (error) {
+    console.error('Games fetch error:', error);
+    res.status(500).json({ success: false, message: 'Ошибка при чтении базы данных игр' });
   }
 };
