@@ -1,0 +1,17 @@
+{
+  "carts": [
+    {
+      "userId": 4,
+      "items": [
+        {
+          "id": 1,
+          "title": "The Witcher 3: Wild Hunt",
+          "price": 29.99,
+          "image": "/1.png",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-03-12T16:55:17.915Z"
+    }
+  ]
+}
