@@ -1,0 +1,37 @@
+{
+  "users": [
+    {},
+    {
+      "id": 1,
+      "email": "4vak@gmail.com",
+      "password": "52",
+      "creationDate": "2026-03-09T05:08:57.847Z",
+      "role": "user",
+      "token": "LmXMj65YLnh2ObcHKO62_iVl8NLM574B4UlEqTjpGkc"
+    },
+    {
+      "id": 2,
+      "email": "4@gmail.com",
+      "password": "5252",
+      "creationDate": "2026-03-09T05:35:05.234Z",
+      "role": "user",
+      "token": "sOJDdYtoAJPuG95tY-0ElTha0MGaVP7e-DjVG2VStR8"
+    },
+    {
+      "id": 3,
+      "email": "privet@mail.ru",
+      "password": "52",
+      "creationDate": "2026-03-09T05:44:36.633Z",
+      "role": "user",
+      "token": "ygC2UL5C0eodRWOjPMAZgmdGekSCBzN-7UyTr8AhJQU"
+    },
+    {
+      "id": 4,
+      "email": "52@5252",
+      "password": "52",
+      "creationDate": "2026-03-09T06:29:17.132Z",
+      "role": "user",
+      "token": "6H6OsbLq9-vjkBWjIJFXUzVlQqPheTnHEB7VMrzEGHs"
+    }
+  ]
+}
