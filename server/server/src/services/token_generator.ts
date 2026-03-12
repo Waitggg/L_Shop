@@ -1,6 +1,7 @@
 import { validateAuth } from "./auth_validator";
+import { AuthRequestBody } from "../types/users";
 
-export async function generateToken(body:any)
+export async function generateToken(body : AuthRequestBody) : Promise<string>
 {
   validateAuth(body);
   const secret = '52';

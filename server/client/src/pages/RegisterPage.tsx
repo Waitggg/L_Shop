@@ -45,12 +45,6 @@ function RegisterPage({ setIsAuth }:RegisterPageProps) {
       
       setIsAuth(true);
       navigate('/api/profile');
-      // const newUser = await User.createNew(email, password);
-      // await createUser(newUser);
-      // // После регистрации сразу логиним
-      // await authUser(newUser);
-      // setIsAuth(true);
-      // navigate('/profile');
     } catch (err) {
       const error = err as ErrorWithMessage;
       setError(error.message || "Ошибка");

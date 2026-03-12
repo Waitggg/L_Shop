@@ -1,16 +1,16 @@
-import express, { Application, Request, Response} from 'express';
+import express, { Application} from 'express';
 import cors from 'cors';
 import path from 'path';
-import { createUser } from './controllers/auth_controller';
-import { User } from './types/users';
 import { authMiddleware } from './services/auth_validator';
-import { login, register, profile } from './routes/server_routes';
-import fs from 'fs'
+import { login, register, profile, logout } from './routes/server_routes';
+import cookieParser from 'cookie-parser';
 
 const app: Application = express();
 const PORT = 3000;
 
 app.use(cors());
+
+app.use(cookieParser());
 
 app.use(express.json());
 
@@ -24,20 +24,7 @@ app.post('/api/login', login);
 
 app.get('/api/profile', authMiddleware, profile);
 
-app.get('/api/products', (req: Request, res: Response) => {
-  res.send({data: [{id: 1, title: "kbp"}]});
-});
-
-app.get('/api/games', (req: Request, res: Response) => {
-  const gamesPath = path.join(__dirname, 'db', 'games.json');
-  
-  if (fs.existsSync(gamesPath)) {
-    const data = fs.readFileSync(gamesPath, 'utf8');
-    res.json(JSON.parse(data));
-  } else {
-    res.status(404).send({ message: "Файл games.json не найден в src/db" });
-  }
-});
+app.post('/api/logout', logout);
 
 app.listen(PORT, () => {
     console.log('enjebado');

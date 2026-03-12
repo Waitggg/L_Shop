@@ -15,7 +15,6 @@ function ProfilePage({ setIsAuth }: RegisterPageProps) {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Загружаем данные пользователя при монтировании
   useEffect(() => {
     fetchUserData();
   }, []);
@@ -37,7 +36,6 @@ function ProfilePage({ setIsAuth }: RegisterPageProps) {
 
       if (!response.ok) {
         if (response.status === 401) {
-          // Токен недействителен - выходим
           handleLogout();
           return;
         }
@@ -55,14 +53,26 @@ function ProfilePage({ setIsAuth }: RegisterPageProps) {
     }
   };
 
-  const handleLogout = () => {
-    // Удаляем токен
-    localStorage.removeItem('token');
-    // Обновляем состояние авторизации
-    setIsAuth(false);
-    // Перенаправляем на страницу входа
-    navigate('/login');
-  };
+  const handleLogout = async () => {
+  try {
+    const response = await fetch('/api/logout', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      setIsAuth(false);
+      navigate('/login');
+    } else {
+      console.error('Ошибка при выходе');
+    }
+  } catch (error) {
+    console.error('Logout error:', error);
+  }
+};
 
   if (loading) {
     return (

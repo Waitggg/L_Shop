@@ -1,8 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import path from 'path';
 import fs from 'fs';
+import { AuthRequestBody,  ValidationResult} from '../types/users';
+import { User } from '../types/users';
 
-export function validateAuth(body : any)
+export function validateAuth(body : AuthRequestBody) : ValidationResult
 {
     if(!body) return { success: false, error: 'Тело запроса пустое!!!!!!! БАН' };
     const { email, password } = body;
@@ -12,39 +14,35 @@ export function validateAuth(body : any)
       return { success: true, error: null };
 }
 
-export function getId()
-{
-  const filePath = path.resolve(__dirname, '../db/users.json');
-  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  return data.users.length;
-}
-
-export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
+export const authMiddleware = async (req: Request, res: Response, next: NextFunction) : Promise<void> => {
   try {
-    const token = req.headers.authorization;
+    const token = req.cookies?.auth_token;
     if (!token) {
-      return res.status(401).json({ 
-        success: false, 
+      res.status(401).json({ //return
+        success: false,
         message: 'Не авторизован' 
       });
+      return;
     }
     
     const filePath = path.resolve(__dirname, '../db/users.json');
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    const user = data.users.find((u: any) => u.token === token);
+    const user = data.users.find((u: User) => u.token === token);
     if (!user) {
-      return res.status(401).json({ 
-        success: false, 
+      res.status(401).json({ //return
+        success: false,
         message: 'Недействительный токен' 
       });
+      return;
     }
     
-    (req as any).user = user;
+    req.user = user;
     next();
     } catch (error) {
     res.status(500).json({ 
       success: false, 
       message: 'Ошибка авторизации' 
     });
+    return;
   }
 }

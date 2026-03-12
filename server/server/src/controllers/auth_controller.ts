@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { User } from '../types/users';
+import { AuthResponseBody, User } from '../types/users';
 import { generateToken } from '../services/token_generator';
 
 export async function createUser(user:User)
@@ -12,7 +12,7 @@ export async function createUser(user:User)
     const rawData = fs.readFileSync(filePath, 'utf8');
     const json = JSON.parse(rawData);
     
-    const findedUser = json.users.find((u: any) => u.email === email);
+    const findedUser = json.users.find((u: User) => u.email === email);
     if (findedUser) return { status: 400, success: false, message: 'Email уже существует' };
     else
     {
@@ -23,7 +23,6 @@ export async function createUser(user:User)
           creationDate: user.creationDate,
           role: "user",
           token: user.token
-        //   token: hs256(`${email}${password}`, secret)
         };
         json.users.push(newChuvak);
         fs.writeFileSync(filePath, JSON.stringify(json, null, 2), 'utf8');
@@ -31,14 +30,14 @@ export async function createUser(user:User)
     }
 }
 
-export async function authUser(user:User)
+export async function authUser(user:User) : Promise<AuthResponseBody>
 {
     const token = await generateToken(user);
     const filePath = path.resolve(__dirname, '../db/users.json');
     const rawData = fs.readFileSync(filePath, 'utf8');
     const json = JSON.parse(rawData);
     
-    const findedUser = json.users.find((u: any) => u.token === token);
+    const findedUser = json.users.find((u: User) => u.token === token);
     if (findedUser) return { status: 200, success: true, token: `${token}`, message: 'Вы удачно вошли в аккаунт!' };
-    return { status: 400, success: false, message: 'Пользователь не найден!' };
+    return { status: 400, success: false, token: "", message: 'Пользователь не найден!' };
 }

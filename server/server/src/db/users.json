@@ -32,6 +32,14 @@
       "creationDate": "2026-03-09T06:29:17.132Z",
       "role": "user",
       "token": "6H6OsbLq9-vjkBWjIJFXUzVlQqPheTnHEB7VMrzEGHs"
+    },
+    {
+      "id": 5,
+      "email": "4vak@mail.com",
+      "password": "52",
+      "creationDate": "2026-03-11T16:58:06.564Z",
+      "role": "user",
+      "token": "ZsuDc4yusno4AXClyq1fkv02hjcm9rtE1U933Ye4BNM"
     }
   ]
 }
