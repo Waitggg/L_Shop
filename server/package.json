@@ -9,7 +9,8 @@
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.10",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "cookie-parser": "^1.4.7"
   },
   "dependencies": {
     "localforage": "^1.10.0",
