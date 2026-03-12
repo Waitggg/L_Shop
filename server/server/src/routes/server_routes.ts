@@ -5,63 +5,84 @@ import { User } from '../types/users';
 import fs from 'fs';
 import path from 'path';
 
-export async function login(req: Request, res: Response) {
+interface Game {
+  id: number;
+  title: string;
+  price: number;
+  genre: string;
+  rating: number;
+  image: string;
+}
+
+interface GamesData {
+  games: Game[];
+}
+
+export async function login(req: Request, res: Response): Promise<void> {
   try {
     const validateError = validateAuth(req.body);
-    if(validateError?.error) return res.status(400).json({ validateError });
+    if (validateError?.error) {
+      res.status(400).json({ validateError });
+      return;
+    }
 
     const isSuccessful = await authUser(req.body);
     res.json(isSuccessful);
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Ошибка авторизации:', error);
     res.status(500).json({ success: false, error: 'Ошибка сервера' });
   }
-};
+}
 
-export async function register (req: Request, res: Response) {
+export async function register(req: Request, res: Response): Promise<void> {
   try {
     const validateError = validateAuth(req.body);
-    if(validateError?.error) return res.status(400).json({ validateError });
+    if (validateError?.error) {
+      res.status(400).json({ validateError });
+      return;
+    }
 
-    // Обратите внимание: метод createNew должен быть реализован в вашем классе User
     const newUser = await User.createNew(req.body.email, req.body.password);
-
     const isSuccessful = await createUser(newUser);
     res.json(isSuccessful);
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Ошибка регистрации:', error);
     res.status(500).json({ success: false, error: 'Ошибка сервера' });
   }
-};
+}
 
-export const profile = async (req: Request, res: Response) => {
+export const profile = async (req: AuthRequest, res: Response): Promise<void> => {
   try {
-    const user = (req as any).user;
+    const user = req.user;
     res.status(200).json({
       success: true,
       user: user
     });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Profile error:', error);
     res.status(500).json({ success: false, message: 'Ошибка сервера' });
   }
 };
 
-export const getGames = async (req: Request, res: Response) => {
+export const getGames = async (req: Request, res: Response): Promise<void> => {
   try {
-    const gamesPath = path.join(__dirname, '..', 'db', 'games.json');
-
+    const gamesPath: string = path.join(__dirname, '..', 'db', 'games.json');
     if (fs.existsSync(gamesPath)) {
-      const data = fs.readFileSync(gamesPath, 'utf8');
-      res.json(JSON.parse(data));
+      const fileContent: string = fs.readFileSync(gamesPath, 'utf8');
+      const data: GamesData = JSON.parse(fileContent);
+      res.json(data.games);
     } else {
       res.status(404).json({
         success: false,
         message: "Файл games.json не найден в директории db"
       });
     }
-  } catch (error) {
-    console.error('Games fetch error:', error);
-    res.status(500).json({ success: false, message: 'Ошибка при чтении базы данных игр' });
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('Games fetch error:', errorMessage);
+    res.status(500).json({
+      success: false,
+      message: 'Ошибка при чтении базы данных игр'
+    });
   }
 };
