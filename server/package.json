@@ -1,0 +1,21 @@
+{
+  "name": "my-fullstack-app",
+  "private": true,
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm start",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "build": "cd client && npm run build && cd ../server && npm run build"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "concurrently": "^8.2.2",
+    "cookie-parser": "^1.4.7"
+  },
+  "dependencies": {
+    "localforage": "^1.10.0",
+    "match-sorter": "^8.2.0",
+    "react-router-dom": "^7.13.0",
+    "sort-by": "^1.2.0"
+  }
+}
