@@ -2,7 +2,16 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import path from 'path';
 import { authMiddleware } from './services/auth_validator';
-import { login, register, profile, logout, getGames } from './routes/server_routes';
+import {
+  login,
+  register,
+  profile,
+  logout,
+  getGames,
+  createNewOrder,
+  getUserOrdersRoute,
+  getOrderByIdRoute
+} from './routes/server_routes';
 import cookieParser from 'cookie-parser';
 import {
   getCart,
@@ -38,6 +47,11 @@ app.post('/api/cart', authMiddleware, addToCart);
 app.put('/api/cart/:id', authMiddleware, updateCartItem);
 app.delete('/api/cart/:id', authMiddleware, removeFromCart);
 app.delete('/api/cart', authMiddleware, clearCart);
+
+// Заказики подьехали
+app.post('/api/orders', authMiddleware, createNewOrder);
+app.get('/api/orders', authMiddleware, getUserOrdersRoute);
+app.get('/api/orders/:orderId', authMiddleware, getOrderByIdRoute);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

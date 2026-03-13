@@ -129,9 +129,14 @@ function ProfilePage({ setIsAuth }: RegisterPageProps) {
               {new Date(userData.creationDate).toLocaleDateString('ru-RU')}
             </span>
           </div>
-                  <button onClick={handleLogout} className="logout-button">
-          Выйти из аккаунта
-        </button>
+          <div className="profile-actions">
+            <Link to="/orders" className="orders-link-btn">
+              Мои заказы
+            </Link>
+            <button onClick={handleLogout} className="logout-button">
+              Выйти из аккаунта
+            </button>
+          </div>
         </div>
       )}
     </div>

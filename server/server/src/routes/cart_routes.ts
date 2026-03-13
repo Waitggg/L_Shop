@@ -184,7 +184,6 @@ export const updateCartItem = async (req: Request, res: Response): Promise<void>
   }
 };
 
-// Удалить товар из корзины
 export const removeFromCart = async (req: Request, res: Response): Promise<void> => {
   try {
     const user = (req as any).user;
@@ -228,7 +227,6 @@ export const removeFromCart = async (req: Request, res: Response): Promise<void>
   }
 };
 
-// Очистить корзину
 export const clearCart = async (req: Request, res: Response): Promise<void> => {
   try {
     const user = (req as any).user;

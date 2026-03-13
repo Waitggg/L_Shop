@@ -298,3 +298,27 @@ h1 {
     font-size: 1.1em;
   }
 }
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.orders-link-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #66c0f4;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.orders-link-btn:hover {
+  background: #87cef5;
+  transform: translateY(-2px);
+}

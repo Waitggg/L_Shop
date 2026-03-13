@@ -5,6 +5,17 @@ import { User } from '../types/users';
 import fs from 'fs';
 import path from 'path';
 
+import {
+  createOrder,
+  getUserOrders,
+  getOrderById,
+} from '../controllers/orders_controller';
+import {
+  CreateOrderRequest,
+  GetOrdersResponse,
+  GetOrderResponse
+} from '../types/orders';
+
 const setAuthCookie = (res: Response, token: string) : void => {
   res.cookie('auth_token', token, {
     httpOnly: true,
@@ -129,5 +140,110 @@ export const getGames = async (req: Request, res: Response) => {
   } catch (error) {
     console.error('Games fetch error:', error);
     res.status(500).json({ success: false, message: 'Ошибка при чтении базы данных игр' });
+  }
+};
+
+
+export const createNewOrder = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const user = (req as any).user as User | undefined;
+    
+    if (!user) {
+      res.status(401).json({
+        success: false,
+        message: 'Не авторизован'
+      });
+      return;
+    }
+    
+    const orderData = req.body as CreateOrderRequest;
+    const result = await createOrder(user, orderData);
+    
+    if (result.success) {
+      res.status(201).json(result);
+    } else {
+      res.status(400).json(result);
+    }
+  } catch (error) {
+    console.error('Ошибка при создании заказа:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Ошибка сервера'
+    });
+  }
+};
+
+
+export const getUserOrdersRoute = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const user = (req as any).user as User | undefined;
+    
+    if (!user || !user.id) {
+      res.status(401).json({
+        success: false,
+        message: 'Не авторизован'
+      });
+      return;
+    }
+    
+    const orders = await getUserOrders(user.id);
+    
+    const response: GetOrdersResponse = {
+      success: true,
+      orders: orders
+    };
+    
+    res.status(200).json(response);
+  } catch (error) {
+    console.error('Ошибка при получении заказов:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Ошибка сервера'
+    });
+  }
+};
+
+
+export const getOrderByIdRoute = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const user = (req as any).user as User | undefined;
+    const { orderId } = req.params as { orderId: string };
+    
+    if (!user || !user.id) {
+      res.status(401).json({
+        success: false,
+        message: 'Не авторизован'
+      });
+      return;
+    }
+    
+    const order = await getOrderById(orderId, user.id);
+    
+    const response: GetOrderResponse = {
+      success: order !== null,
+      order: order || undefined,
+      message: order ? undefined : 'Заказ не найден'
+    };
+    
+    if (order) {
+      res.status(200).json(response);
+    } else {
+      res.status(404).json(response);
+    }
+  } catch (error) {
+    console.error('Ошибка при получении заказа:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Ошибка сервера'
+    });
   }
 };

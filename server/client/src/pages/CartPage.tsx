@@ -12,8 +12,7 @@ const CartPage: React.FC = () => {
       navigate('/login');
       return;
     }
-    // Здесь будет логика оформления заказа
-    alert('Функция оформления заказа в разработке');
+    navigate('/checkout');
   };
 
   if (loading) {
