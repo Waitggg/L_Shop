@@ -5,20 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c92a44a-b11d-488b-b561-0dd70aa9c788" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/cartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/cartContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/client/src/CheckoutPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/client/src/OrderSuccessPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/client/src/OrdersPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/client/src/pages/CheckoutPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/client/src/pages/OrderSuccessPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/client/src/types/orderTypes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/server/src/controllers/orders_controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/server/src/db/orders.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/server/src/types/orders.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/pages/CartPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/pages/CartPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/pages/ProfilePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/src/routes/cart_routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/src/routes/cart_routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/src/routes/server_routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/src/routes/server_routes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_D:/сервера/доставка" value="3AhbP79OZBMkSTCPOP7Pw364ZBf" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -37,7 +58,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Waitggg/L_Shop.git&quot;,
-    &quot;accountId&quot;: &quot;33e34a00-d6b6-456d-8e70-983c11389f50&quot;
+    &quot;accountId&quot;: &quot;8f619c25-b023-4348-9f53-4ebd58f84ea9&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -52,6 +73,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "korolev-users",
@@ -62,8 +84,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\сервера\\1\\server\\client\\node_modules\\typescript\\lib",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "D:\\сервера\\доставка\\server\\client\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -84,6 +106,8 @@
       <workItem from="1773047723460" duration="106000" />
       <workItem from="1773048855831" duration="153000" />
       <workItem from="1773050150884" duration="310000" />
+      <workItem from="1773415854930" duration="407000" />
+      <workItem from="1773416289352" duration="12831000" />
     </task>
     <servers />
   </component>
