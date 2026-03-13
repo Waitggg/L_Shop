@@ -1,8 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import path from 'path';
-import { createUser } from './controllers/auth_controller';
-import { User } from './types/users';
 import { authMiddleware } from './services/auth_validator';
 import { login, register, profile, logout, getGames } from './routes/server_routes';
 import cookieParser from 'cookie-parser';

@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/Waitggg/L_Shop#readme",
   "devDependencies": {
-    "cookie-parser": "^1.4.7"
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6"
   }
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import type { RegisterPageProps, ErrorWithMessage } from '../types/authTypes';
+import { useCart}   from '../cartContext';
 
 interface UserData {
   id: string;
@@ -14,6 +15,7 @@ function ProfilePage({ setIsAuth }: RegisterPageProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const {cart} = useCart();
 
   useEffect(() => {
     fetchUserData();
@@ -95,17 +97,22 @@ function ProfilePage({ setIsAuth }: RegisterPageProps) {
 
   return (
     <div className="profile-container">
+      <header className="xenon-header">
+          <div className="logo">
+              <h2>XenonZap</h2>
+          </div>
+          <nav className="header-nav">
+              <Link to="/" className="cart-btn" style={{width: 101, paddingRight: 38, paddingLeft: 38}}>На главную</Link>
+              <Link to="/cart" className="cart-btn">🛒 Корзина {cart.totalItems > 0 && `(${cart.totalItems})`}</Link>
+          </nav>
+      </header>
       <div className="profile-container">
-        <div className="error">{error}</div>
-        <button onClick={handleLogout} className="logout-button">
-          Вернуться на главную
-        </button>
       </div>
 
-      <h2>Профиль пользователя</h2>
 
       {userData && (
         <div className="profile-info">
+          <h2>Профиль пользователя</h2>
           <div className="info-item">
             <span className="info-label">Email: </span>
             <span className="info-value">{userData.email}</span>
@@ -122,13 +129,11 @@ function ProfilePage({ setIsAuth }: RegisterPageProps) {
               {new Date(userData.creationDate).toLocaleDateString('ru-RU')}
             </span>
           </div>
-        </div>
-      )}
-            <div className="profile-header">
-        <button onClick={handleLogout} className="logout-button">
+                  <button onClick={handleLogout} className="logout-button">
           Выйти из аккаунта
         </button>
-      </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -40,13 +40,11 @@ const HomePage: React.FC = () => {
 
     
     const genres = useMemo(() => {
-        // Защита: если games еще не загружены или не массив
         if (!Array.isArray(games)) return ['All'];
         return ['All', ...Array.from(new Set(games.map((game) => game.genre)))];
     }, [games]);
 
     const filteredAndSortedGames = useMemo(() => {
-        // Защита: если данных нет, возвращаем пустой массив, чтобы .map не упал
         if (!Array.isArray(games)) return [];
 
         let result = [...games];

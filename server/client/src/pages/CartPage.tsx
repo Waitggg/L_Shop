@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useCart } from '../cartContext';
 import { Link, useNavigate } from 'react-router-dom';
 import '../CartPage.css';
 
 const CartPage: React.FC = () => {
   const { cart, removeFromCart, updateQuantity, clearCart, loading, error } = useCart();
-  const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   const handleCheckout = () => {
-    // Проверяем авторизацию
     if (!localStorage.getItem('token')) {
       navigate('/login');
       return;
@@ -23,9 +21,6 @@ const CartPage: React.FC = () => {
       <div className="cart-container">
         <header className="xenon-header">
           <div className="logo"><h2>XenonZap</h2></div>
-          <div className="search-bar">
-            <input type="text" placeholder="Поиск игр..." value={searchQuery} readOnly />
-          </div>
           <nav className="header-nav">
             <Link to="/login" className="nav-link">🖥️ Личный кабинет</Link>
             <Link to="/" className="cart-btn">На главную</Link>
@@ -43,9 +38,6 @@ const CartPage: React.FC = () => {
       <div className="cart-container">
         <header className="xenon-header">
           <div className="logo"><h2>XenonZap</h2></div>
-          <div className="search-bar">
-            <input type="text" placeholder="Поиск игр..." value={searchQuery} readOnly />
-          </div>
           <nav className="header-nav">
             <Link to="/login" className="nav-link">🖥️ Личный кабинет</Link>
             <Link to="/" className="cart-btn">На главную</Link>
@@ -67,14 +59,6 @@ const CartPage: React.FC = () => {
       <div className="cart-container">
         <header className="xenon-header">
           <div className="logo"><h2>XenonZap</h2></div>
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Поиск игр..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
           <nav className="header-nav" style={{marginRight:0}}>
             <Link to="/login" className="nav-link">🖥️ Личный кабинет</Link>
             <Link to="/" className="cart-btn" style={{width: 101, paddingRight: 38, paddingLeft: 38}}>
@@ -95,14 +79,6 @@ const CartPage: React.FC = () => {
     <div className="cart-container">
       <header className="xenon-header">
         <div className="logo"><h2>XenonZap</h2></div>
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Поиск игр..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
         <nav className="header-nav" style={{marginRight:0}}>
           <Link to="/login" className="nav-link">🖥️ Личный кабинет</Link>
           <Link to="/" className="cart-btn" style={{width: 101, paddingRight: 38, paddingLeft: 38}}>
