@@ -28,6 +28,7 @@ export async function createUser(user:User)
         fs.writeFileSync(filePath, JSON.stringify(json, null, 2), 'utf8');
         return { status: 201, success: true, message: 'Пользователь создан', data: { userId: newChuvak.id, token: newChuvak.token } };
     }
+    
 }
 
 export async function authUser(user:User) : Promise<AuthResponseBody>

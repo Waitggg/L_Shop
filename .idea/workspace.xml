@@ -4,24 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c92a44a-b11d-488b-b561-0dd70aa9c788" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/client/src/CheckoutPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/client/src/OrderSuccessPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/client/src/OrdersPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/client/src/pages/CheckoutPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/client/src/pages/OrderSuccessPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/client/src/types/orderTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/server/src/controllers/orders_controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/server/src/db/orders.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/server/src/types/orders.ts" afterDir="false" />
+    <list default="true" id="7c92a44a-b11d-488b-b561-0dd70aa9c788" name="Changes" comment="почти рабочяя версия">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/pages/CartPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/pages/CartPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/pages/ProfilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server/src/routes/cart_routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/src/routes/cart_routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server/src/routes/server_routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/src/routes/server_routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/pages/OrdersPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/pages/OrdersPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/db/carts.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/db/carts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/src/controllers/auth_controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/src/controllers/auth_controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/src/db/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/src/db/orders.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/src/db/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/src/db/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +67,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "korolev-users",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "D:/L_shop-popov-main-page",
+    "last_opened_file_path": "D:/сервера/доставка",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,6 +97,7 @@
       <workItem from="1773050150884" duration="310000" />
       <workItem from="1773415854930" duration="407000" />
       <workItem from="1773416289352" duration="12831000" />
+      <workItem from="1773471480166" duration="1751000" />
     </task>
     <servers />
   </component>

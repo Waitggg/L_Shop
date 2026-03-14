@@ -25,7 +25,6 @@ const OrdersPage: React.FC = () => {
 					navigate('/login');
 					return;
 				}
-				throw new Error('Ошибка загрузки заказов');
 			}
 			
 			const data = await response.json() as GetOrdersResponse;
@@ -156,12 +155,6 @@ const OrdersPage: React.FC = () => {
 									<div className="order-total-price">
 										Итого: <span>${order.totalPrice.toFixed(2)}</span>
 									</div>
-									<Link
-										to={`/order/${order.id}`}
-										className="view-details-btn"
-									>
-										Подробнее
-									</Link>
 								</div>
 							</div>
 						))}

@@ -56,6 +56,14 @@
       "creationDate": "2026-03-13T11:34:20.085Z",
       "role": "user",
       "token": "VlBVT6IvLen2s1a1dp3EqLeLe3KpD0zg_QVgkfz4l8E"
+    },
+    {
+      "id": 8,
+      "email": "34@5",
+      "password": "12",
+      "creationDate": "2026-03-14T07:22:20.090Z",
+      "role": "user",
+      "token": "hU_fP0Em1tgxoTsWFyFhU4ufI3U07xNc4gyFkCynsj0"
     }
   ]
 }
